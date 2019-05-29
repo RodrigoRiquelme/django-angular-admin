@@ -5,3 +5,4 @@ back/adm_tickets/static/ng/
 .DS_Store
 .idea/
 .env
+*.pyc
