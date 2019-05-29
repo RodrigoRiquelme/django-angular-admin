@@ -10,13 +10,10 @@ class TicketStatus(Enum):
     CLOSED = "Resuelto y cerrado"
 
 
-class User(AbstractUser):
-    pass
-
 
 class Ticket(models.Model):
     id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
-    status = models.CharField(max_length=10, choices=TicketStatus)
+    status = models.CharField(max_length=10)
     created_at = models.DateTimeField(auto_now=True)
