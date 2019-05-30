@@ -1,5 +1,5 @@
-Django==1.11
+Django>=1.11.19
 django-appconf==1.0.1
 djangorestframework==3.9.4
-Pillow==2.6.1
+Pillow>=3.3.2
 six==1.12.0
