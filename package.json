@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "Django Angular Admin",
   "scripts": {
-    "install": "cd bash && ./install.sh",
-    "createsuperuser": "cd bash && ./createsuperuser.sh",
-    "migrations": "cd bash && ./migrations.sh",
+    "install": "cd ./bash/ && ./install.sh",
+    "python-virtualenv": "cd ./back/ && virtualenv --python=python2 .env",
+    "createsuperuser": "cd ./bash/ && ./createsuperuser.sh",
+    "migrations": "cd ./bash/ && ./migrations.sh",
     "start": "npm run start-backend & npm run start-frontend",
-    "start-backend":  "cd ./back && source .env/bin/activate && python manage.py runserver",
-    "start-frontend": "cd ./adm-tickets && npm start"
+    "start-backend":  "cd ./back/ && source .env/bin/activate && python manage.py runserver",
+    "start-frontend": "cd ./adm-tickets/ && npm start"
   },
   "repository": {
     "type": "git",

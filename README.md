@@ -1,5 +1,10 @@
 ##Django Angular Admin
-* Requirements: Python 2.7, PIP, Node.js, NPM
+* Requirements: Python 2.7, PIP, Node.js, NPM, virtualenv
+
+* Create Python VirtualEnv
+```
+npm run python-virtualenv
+```
 
 * Install
 ```
