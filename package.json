@@ -1,0 +1,22 @@
+{
+  "name": "django-angular-admin",
+  "version": "1.0.0",
+  "description": "Django Angular Admin",
+  "scripts": {
+    "install": "cd bash && ./install.sh",
+    "createsuperuser": "cd bash && ./createsuperuser.sh",
+    "migrations": "cd bash && ./migrations.sh",
+    "start": "cd bash && ./start.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RodrigoRiquelme/django-angular-admin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RodrigoRiquelme/django-angular-admin/issues"
+  },
+  "homepage": "https://github.com/RodrigoRiquelme/django-angular-admin#readme",
+  "devDependencies": {}
+}

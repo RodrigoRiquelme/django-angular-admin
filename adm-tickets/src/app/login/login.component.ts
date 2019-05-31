@@ -18,7 +18,11 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   invalidLogin = false;
-  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
   onSubmit() {
     if (this.loginForm.invalid) {
