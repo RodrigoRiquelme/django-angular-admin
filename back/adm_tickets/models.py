@@ -3,8 +3,8 @@ from django.contrib.auth.models import AbstractUser
 
 
 TICKET_STATUS = (
-    ('OPEN', 'Draft'),
-    ('PENDING', 'Published'),
+    ('OPEN', 'Abierto'),
+    ('PENDING', 'Pendiete'),
     ('IN_PROCESS', 'En Proceso'),
     ('CLOSED', 'Resuelto y cerrado')
 )

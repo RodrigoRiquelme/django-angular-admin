@@ -7,6 +7,7 @@ import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
 import { TicketAddComponent } from './ticket-add/ticket-add.component';
 import { TicketEditComponent } from './ticket-edit/ticket-edit.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TicketEditComponent } from './ticket-edit/ticket-edit.component';
     TicketListComponent,
     TicketDetailComponent,
     TicketAddComponent,
-    TicketEditComponent
+    TicketEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
