@@ -21,8 +21,14 @@ npm run createsuperuser
 npm migrations
 ```
 
-* Run!
+* Run all stacks!
 ```
 npm start
 ```
-* Enjoy
+* OR maybe you wanna run backend and frontend on separated scripts.
+```
+npm run start-backend
+```
+```
+npm run start-frontend
+```
