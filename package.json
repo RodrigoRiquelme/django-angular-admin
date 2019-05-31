@@ -6,7 +6,9 @@
     "install": "cd bash && ./install.sh",
     "createsuperuser": "cd bash && ./createsuperuser.sh",
     "migrations": "cd bash && ./migrations.sh",
-    "start": "cd bash && ./start.sh"
+    "start": "npm run start-backend & npm run start-frontend",
+    "start-backend":  "cd ./back && source .env/bin/activate && python manage.py runserver",
+    "start-frontend": "cd ./adm-tickets && npm start"
   },
   "repository": {
     "type": "git",
