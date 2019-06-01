@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(loginPayload: LoginPayLoad): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>('http://localhost:8000/api-auth-login', loginPayload).pipe(
+    return this.http.post<ApiResponse>('http://localhost:8000/api-auth', loginPayload).pipe(
       catchError(val => of(val))
     );
   }

@@ -63,7 +63,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware'
+)
+
+MIDDLEWARE = (
+    'adm_tickets.middleware.open_access_middleware'
 )
 
 ROOT_URLCONF = 'adm_tickets.urls'
