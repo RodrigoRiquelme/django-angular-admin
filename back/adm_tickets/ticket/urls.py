@@ -4,7 +4,7 @@ from rest_framework import routers
 from adm_tickets.ticket.views import TicketsViewSet
 
 router = routers.DefaultRouter()
-router.register(r'ticket', TicketsViewSet)
+router.register(r'tickets', TicketsViewSet)
 
 
 urlpatterns = [
