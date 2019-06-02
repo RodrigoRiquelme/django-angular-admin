@@ -12,7 +12,7 @@
             </span>
           </div>
           <input type="text" class="form-control" formControlName="username" id="username" placeholder="usuario" autocomplete="off">
-          <div class="error" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">Se requiere usuario</div>
+          <label class="error col-12" for="username" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">Se requiere usuario</label>
         </div>
         <div class="input-group form-group">
           <div class="input-group-prepend">
@@ -21,7 +21,7 @@
             </span>
           </div>
           <input type="password" class="form-control" formControlName="password" id="password" placeholder="contraseña" autocomplete="off">
-          <div class="error" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">Se requiere contraseña</div>
+          <label class="error col-12" for="password" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">Se requiere contraseña</label>
         </div>
         <button class="btn btn-success" [disabled]="loginForm.invalid">Login</button>
       </div>

@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication'
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication'
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
@@ -52,6 +53,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'adm_tickets.ticket'
 )
 
@@ -71,8 +73,6 @@ ROOT_URLCONF = 'adm_tickets.urls'
 CORS_ORIGIN_WHITELIST = (
     'localhost:4200'
 )
-
-SESSION_COOKIE_SECURE = False
 
 TEMPLATES = [
     {
