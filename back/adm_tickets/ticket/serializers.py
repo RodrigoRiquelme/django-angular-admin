@@ -1,6 +1,6 @@
 
 from rest_framework import serializers
-from adm_tickets.models import Ticket
+from adm_tickets.ticket.models import Ticket
 
 
 class TicketSerializer(serializers.HyperlinkedModelSerializer):

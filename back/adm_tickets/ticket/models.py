@@ -1,6 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
-
 
 TICKET_STATUS = (
     ('OPEN', 'Abierto'),
@@ -11,8 +9,14 @@ TICKET_STATUS = (
 
 
 class Ticket(models.Model):
-    id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
     status = models.CharField(max_length=10, choices=TICKET_STATUS)
     created_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Ticket"
+        verbose_name_plural = "Tickets"
+
+    def __unicode__(self):
+        return self.title

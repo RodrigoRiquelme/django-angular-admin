@@ -51,8 +51,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'adm_tickets',
-    'rest_framework'
+    'rest_framework',
+    'adm_tickets.ticket'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,14 +63,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware'
-)
-
-MIDDLEWARE = (
-    'adm_tickets.middleware.open_access_middleware'
+    'corsheaders.middleware.CorsMiddleware',
 )
 
 ROOT_URLCONF = 'adm_tickets.urls'
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:4200'
+)
+
+SESSION_COOKIE_SECURE = False
 
 TEMPLATES = [
     {
@@ -97,7 +99,7 @@ WSGI_APPLICATION = 'adm_tickets.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../../db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, '../db.sqlite3'),
     }
 }
 
