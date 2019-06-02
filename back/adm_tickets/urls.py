@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^api-token-auth/', obtain_auth_token)
+    url(r'^auth/login/', obtain_auth_token)
 ]
 
 urlpatterns += [

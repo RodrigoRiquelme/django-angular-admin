@@ -12,6 +12,6 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(loginPayload: LoginPayLoad): Observable<TokenResponse> {
-    return this.http.post<TokenResponse>('http://127.0.0.1:8000/api-token-auth/', loginPayload);
+    return this.http.post<TokenResponse>('http://127.0.0.1:8000/auth/login/', loginPayload);
   }
 }
