@@ -14,4 +14,8 @@ export class AuthService {
   login(loginPayload: LoginPayLoad): Observable<TokenResponse> {
     return this.http.post<TokenResponse>('http://127.0.0.1:8000/auth/login/', loginPayload);
   }
+
+  logout(): Observable<any> {
+    return this.http.get('http://127.0.0.1:8000/auth/logout/');
+  }
 }

@@ -11,14 +11,14 @@ import { Ticket } from '../model/ticket';
 export class TicketService {
 
   constructor(private http: HttpClient) { }
-  baseUrl = 'http://localhost:8000/ticket/';
+  baseUrl = 'http://localhost:8000/api/tickets/';
 
-  getAll(): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl);
+  getAll(): Observable<Ticket[]> {
+    return this.http.get<Ticket[]>(this.baseUrl);
   }
 
-  getById(id: number): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseUrl + id);
+  getById(id: number): Observable<Ticket> {
+    return this.http.get<Ticket>(this.baseUrl + id);
   }
 
   create(ticket: Ticket): Observable<ApiResponse> {
