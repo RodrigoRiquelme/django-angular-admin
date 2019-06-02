@@ -16,5 +16,6 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    url(r'^api/', include('adm_tickets.ticket.urls'))
+    url(r'^api/', include('adm_tickets.ticket.urls')),
+    url(r'^auth/', include('adm_tickets.auth.urls'))
 ]
