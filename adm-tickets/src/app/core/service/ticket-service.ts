@@ -11,14 +11,14 @@ import { Ticket } from '../model/ticket';
 export class TicketService {
 
   constructor(private http: HttpClient) { }
-  baseUrl = 'http://localhost:8000/api/tickets';
+  baseUrl = 'http://localhost:8000/api/tickets/';
 
   getAll(): Observable<Ticket[]> {
     return this.http.get<Ticket[]>(this.baseUrl);
   }
 
   getById(id: number): Observable<Ticket> {
-    return this.http.get<Ticket>(`${this.baseUrl}/${id}/`);
+    return this.http.get<Ticket>(`${this.baseUrl}${id}/`);
   }
 
   create(ticket: Ticket): Observable<ApiResponse> {
@@ -26,10 +26,10 @@ export class TicketService {
   }
 
   update(ticket: Ticket): Observable<ApiResponse> {
-    return this.http.put<ApiResponse>(`${this.baseUrl}/${ticket.id}/`, ticket);
+    return this.http.put<ApiResponse>(`${this.baseUrl}${ticket.id}/`, ticket);
   }
 
   delete(ticket: Ticket): Observable<ApiResponse> {
-    return this.http.delete<ApiResponse>(`${this.baseUrl}/${ticket.id}/`);
+    return this.http.delete<ApiResponse>(`${this.baseUrl}${ticket.id}/`);
   }
 }

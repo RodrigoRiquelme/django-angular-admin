@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TicketService } from '../core/service/ticket-service';
+import { TicketStatusEnum } from '../core/model/ticket-status.enum';
 
 @Component({
   selector: 'app-ticket-add',
@@ -10,13 +11,15 @@ import { TicketService } from '../core/service/ticket-service';
 })
 export class TicketAddComponent implements OnInit {
 
+  public TicketStatusEnum: any = TicketStatusEnum;
+
+  addForm: FormGroup;
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private ticketService: TicketService
-  ) { }
-
-  addForm: FormGroup;
+  ) {}
 
   ngOnInit() {
     this.addForm = this.formBuilder.group({

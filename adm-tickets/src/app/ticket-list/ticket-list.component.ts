@@ -29,9 +29,11 @@ export class TicketListComponent implements OnInit {
   }
 
   delete(ticket: Ticket) {
-    this.ticketService.delete(ticket.id).subscribe(res => {
-      this.tickets = this.tickets.filter(t => t !== ticket);
-    });
+    if (confirm(`¿Borrar ticket ${ticket.id}?`)) {
+      this.ticketService.delete(ticket).subscribe(res => {
+        this.tickets = this.tickets.filter(t => t.id !== ticket.id);
+      });
+    }
   }
 
   edit(ticket: Ticket): void {

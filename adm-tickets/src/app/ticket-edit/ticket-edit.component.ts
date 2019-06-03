@@ -12,13 +12,18 @@ import { TicketStatusEnum } from '../core/model/ticket-status.enum';
   styleUrls: ['./ticket-edit.component.scss']
 })
 export class TicketEditComponent implements OnInit {
+
   public TicketStatusEnum: any = TicketStatusEnum;
-  ticket: Ticket;
-  editForm: FormGroup;
+
+  public ticket: Ticket;
+
+  public editForm: FormGroup;
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private ticketService: TicketService) { }
+    private ticketService: TicketService
+  ) {}
 
   ngOnInit() {
     let ticketId = window.localStorage.getItem("editTicketId");
@@ -46,12 +51,8 @@ export class TicketEditComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          if(data.status === 200) {
-            alert('Ticket updated successfully.');
-            this.router.navigate(['list-ticket']);
-          }else {
-            alert(data.message);
-          }
+          alert('Ticket updated successfully.');
+          this.router.navigate(['ticket-list']);
         },
         error => {
           alert(error);
