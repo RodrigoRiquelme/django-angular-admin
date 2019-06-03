@@ -6,4 +6,4 @@ from adm_tickets.ticket.models import Ticket
 class TicketSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ticket
-        fields = ('title', 'description', 'status', 'created_at')
+        fields = ('id', 'title', 'description', 'status', 'created_at')

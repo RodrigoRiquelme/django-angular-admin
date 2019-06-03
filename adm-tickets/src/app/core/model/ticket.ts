@@ -5,5 +5,5 @@ export class Ticket {
   title: string;
   description: string;
   status: TicketStatusEnum;
-  createdAt: string;
+  created_at: string;
 }

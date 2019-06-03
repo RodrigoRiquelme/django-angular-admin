@@ -54,11 +54,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
     'adm_tickets.ticket'
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -71,7 +73,8 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'adm_tickets.urls'
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:4200'
+    'localhost:4200',
+    '127.0.0.1:4200'
 )
 
 TEMPLATES = [

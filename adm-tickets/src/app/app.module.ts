@@ -14,6 +14,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { AuthInterceptor } from './core/interceptor/auth-interceptor';
 import { TicketService } from './core/service/ticket-service';
 import { AuthService } from './core/service/auth.service';
+import { EnumToArrayPipe } from './core/pipe/enum-to-array.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AuthService } from './core/service/auth.service';
     TicketAddComponent,
     TicketEditComponent,
     LoginComponent,
-    NavigationComponent
+    NavigationComponent,
+    EnumToArrayPipe
   ],
   imports: [
     BrowserModule,

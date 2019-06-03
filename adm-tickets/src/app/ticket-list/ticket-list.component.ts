@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from '../core/model/ticket';
 import { TicketService } from '../core/service/ticket-service';
+import { TicketStatusEnum } from '../core/model/ticket-status.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ticket-list',
@@ -11,7 +13,12 @@ export class TicketListComponent implements OnInit {
 
   tickets: Ticket[];
 
-  constructor(private ticketService: TicketService) { }
+  public TicketStatusEnum: any = TicketStatusEnum;
+
+  constructor(
+    private router: Router,
+    private ticketService: TicketService
+  ) { }
 
   ngOnInit() {
     this.ticketService
@@ -21,10 +28,19 @@ export class TicketListComponent implements OnInit {
       });
   }
 
-  delete(id) {
-    this.ticketService.delete(id).subscribe(res => {
-      console.log('Deleted');
+  delete(ticket: Ticket) {
+    this.ticketService.delete(ticket.id).subscribe(res => {
+      this.tickets = this.tickets.filter(t => t !== ticket);
     });
   }
 
+  edit(ticket: Ticket): void {
+    window.localStorage.removeItem("editTicketId");
+    window.localStorage.setItem("editTicketId", ticket.id.toString());
+    this.router.navigate(['ticket-edit']);
+  };
+
+  add(): void {
+    this.router.navigate(['ticket-add']);
+  };
 }
