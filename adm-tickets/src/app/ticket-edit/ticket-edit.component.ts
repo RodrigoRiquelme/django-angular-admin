@@ -5,6 +5,7 @@ import { TicketService } from '../core/service/ticket-service';
 import { Ticket } from '../core/model/ticket';
 import { first } from 'rxjs/operators';
 import { TicketStatusEnum } from '../core/model/ticket-status.enum';
+import { AuthService } from '../core/service/auth.service';
 
 @Component({
   selector: 'app-ticket-edit',
@@ -22,10 +23,16 @@ export class TicketEditComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private ticketService: TicketService
+    private ticketService: TicketService,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate(['login']);
+      return;
+    }
+
     let ticketId = window.localStorage.getItem("editTicketId");
     if(!ticketId) {
       alert("Invalid action.")

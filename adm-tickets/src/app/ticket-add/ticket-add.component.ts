@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TicketService } from '../core/service/ticket-service';
 import { TicketStatusEnum } from '../core/model/ticket-status.enum';
+import { AuthService } from '../core/service/auth.service';
 
 @Component({
   selector: 'app-ticket-add',
@@ -18,10 +19,16 @@ export class TicketAddComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private ticketService: TicketService
+    private ticketService: TicketService,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate(['login']);
+      return;
+    }
+
     this.addForm = this.formBuilder.group({
       id: [],
       title: ['', Validators.required],

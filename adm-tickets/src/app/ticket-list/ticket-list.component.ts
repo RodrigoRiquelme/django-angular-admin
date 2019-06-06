@@ -3,6 +3,7 @@ import { Ticket } from '../core/model/ticket';
 import { TicketService } from '../core/service/ticket-service';
 import { TicketStatusEnum } from '../core/model/ticket-status.enum';
 import { Router } from '@angular/router';
+import { AuthService } from '../core/service/auth.service';
 
 @Component({
   selector: 'app-ticket-list',
@@ -17,10 +18,16 @@ export class TicketListComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private ticketService: TicketService
+    private ticketService: TicketService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate(['login']);
+      return;
+    }
+
     this.ticketService
       .getAll()
       .subscribe((data: Ticket[]) => {
