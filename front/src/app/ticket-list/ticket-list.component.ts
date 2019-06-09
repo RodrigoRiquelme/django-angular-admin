@@ -14,7 +14,7 @@ export class TicketListComponent implements OnInit {
 
   tickets: Ticket[];
 
-  public TicketStatusEnum: any = TicketStatusEnum;
+  public TicketStatusEnum = TicketStatusEnum;
 
   constructor(
     private router: Router,
