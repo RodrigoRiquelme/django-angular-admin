@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-cd ..
-python makemigrations
+cd ../back
+python manage.py makemigrations
 python manage.py migrate --run-syncdb
+cd -
